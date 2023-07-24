@@ -1,0 +1,23 @@
+*{
+	margin : 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+img{
+	width: 40px;
+}
+.articleList_container .articleList_wrap{
+	border: 1px solid black;
+}
+.articleList_container div{
+		width: 1280px;
+		margin:auto;
+}
+.articleMember{
+	display: flex;
+}
+.articleListTitle{
+	font-size: 2rem;
+	border: 1px solid black;
+}
