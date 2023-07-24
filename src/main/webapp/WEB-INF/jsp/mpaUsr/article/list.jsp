@@ -1,47 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="pageTitle"
+	value="<span><i class='far fa-clipboard'></i></span> <span>${board.name} ARTICLE LIST</span>" />
+
+
 <%@ include file="../common/head.jspf"%>
-<%-- <c:set var="pageTitle"
-		value="<span><i class='far fa-clipboard'></i></span> <span>${board.name} ARTICLE LIST</span>" />
-		--%>
-		
-<h2 class = "articleLisBoardTitle">${board.name}ARTICLELIST</h2>
+
+<h2 class="articleLisBoardTitle">${board.name}ARTICLELIST</h2>
 <section class="articleListUi_container">
 
 
 	<div class=articleListIu_wrap>
-		<div>
-			<form action="">
-				<input type="hidden" name="boardId" value="${board.id}" />
+		<form action="">
+			<input type="hidden" name="boardId" value="${board.id}" />
+			<div class="searchSelect">
+				<label>
+					<span>옵션</span>
+				</label>
+				<select name="searchKeywordType">
+					<option value="titleAndBody">제목+내용</option>
+					<option value="title">제목</option>
+					<option value="body">내용</option>
+				</select>
 
-				<div>
-					<label>
-						<span>옵션</span>
-					</label>
-					<select name="searchKeywordType">
-						<option value="titleAndBody">제목+내용</option>
-						<option value="title">제목</option>
-						<option value="body">내용</option>
-					</select>
-				</div>
+				<script>
+					const param__searchKeywordType = '${param.searchKeywordType}';
+					if (param__searchKeywordType.length > 0) {
+						$('.articleListIu_wrap [name="searchKeywordType"]')
+								.val('${param.searchKeywordType}');
+					}
+				</script>
+			</div>
+			<div class="searchInput">
+				<label>
+					<span>제목</span>
+				</label>
+				<input value="${param.searchKeyword}" name="searchKeyword"
+					type="text" placeholder="검색어를 입력해주세요." maxlength="10" />
+			</div>
 
-				<div>
-					<label>
-						<span>제목</span>
-					</label>
-					<input value="${param.searchKeyword}" name="searchKeyword"
-						type="text" placeholder="검색어를 입력해주세요." maxlength="10" />
-				</div>
-
-				<div>
-					<label>
-						<span>검색</span>
-					</label>
-					<input type="submit" value="검색" />
-				</div>
-			</form>
-		</div>
+			<div class="searchBtn">
+				<label>
+					<span>검색</span>
+				</label>
+				<input type="submit" value="검색" />
+			</div>
+		</form>
 
 		<div>
 			<span>TOTAL ITEMS : </span>
@@ -56,7 +63,7 @@
 
 
 
-		<div>
+		<div class="articleListWrite">
 			<a href="write?boardId=${board.id}">
 				<span>
 					<i class="fas fa-edit"></i>
@@ -164,12 +171,5 @@
 
 
 
-<script>
-	const param__searchKeywordType = '${param.searchKeywordType}';
-	if (param__searchKeywordType.length > 0) {
-		$('.search-form-box form [name="searchKeywordType"]').val(
-				'${param.searchKeywordType}');
-	}
-</script>
 
 <%@ include file="../common/foot.jspf"%>

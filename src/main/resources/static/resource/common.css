@@ -64,26 +64,45 @@ img {
 	width: 5em;
 	border-radius: 50%;
 }
-.articleLisBoardTitle{
+
+.articleLisBoardTitle {
 	text-align: center;
 }
+
 .articleListUi_container {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	
-
 }
 
+
 .articleListUi_container .articleListIu_wrap {
-	width: 600px;
-	padding: 2em;
+	width: 450px;
+	padding: 1em;
 	display: flex;
 	justify-content: space-between;
 }
+.articleListIu_wrap form .searchSelect select{
+	width: 150px;
+	border: 2px solid #eee;
+}
+.articleListIu_wrap form .searchInput input{
+	width: 150px;
+	border: 2px solid #eee;
+}
+.articleListIu_wrap form .searchBtn input{
+	width: 150px;
+	color: #fff;
+	background : rgb(128, 0, 255);
+}
+
 
 .articleListUi_container .articleListIu_wrap div {
 	width: 200px;
+}
+
+.articleListUi_container .articleListIu_wrap .articleListWrite {
+	text-align: center;
 }
 
 .articleList_container {
@@ -102,7 +121,8 @@ img {
 }
 
 .articleList_container .articleList_wrap .articleList_box {
-	width: 470px;
+	width: 30%;
+	min-width: 350px;
 	margin: 0 1em 1em 1em;
 	padding: 1em;
 	border: 1px solid #eee;
@@ -111,6 +131,7 @@ img {
 
 .articleList_container .articleList_wrap .articleList_box div {
 	margin-bottom: 5px;
+	text-align: center;
 }
 
 .articleList_container .articleList_wrap .articleList_box .articleListMember {
@@ -124,22 +145,13 @@ div {
 }
 
 .articleList_container .articleList_wrap .articleList_box .articleListTitle {
-	width: 100%;
+
 	font-size: 1.5rem;
 	text-align: center;
 
 }
 
-.articleList_container .articleList_wrap .articleList_box .articleListBody {
-	width: 100%;
-	text-align: center;
-}
-
-.articleList_container .articleList_wrap .articleList_box .articleListBtn {
-	width: 100%;
-	text-align: center;
-}
-
 .articleListPagination_container {
+	margin-bottom: 2em;
 	text-align: center;
 }
