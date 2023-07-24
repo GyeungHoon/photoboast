@@ -1,62 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<c:set var="pageTitle"
-	value="<span><i class='far fa-clipboard'></i></span> <span>${board.name} ARTICLE LIST</span>" />
-
 <%@ include file="../common/head.jspf"%>
+<%-- <c:set var="pageTitle"
+		value="<span><i class='far fa-clipboard'></i></span> <span>${board.name} ARTICLE LIST</span>" />
+		--%>
+		
+<h2 class = "articleLisBoardTitle">${board.name}ARTICLELIST</h2>
+<section class="articleListUi_container">
 
 
-	<div class="articleList_wrap">
+	<div class=articleListIu_wrap>
 		<div>
-			<span>게시물 리스트</span>
+			<form action="">
+				<input type="hidden" name="boardId" value="${board.id}" />
+
+				<div>
+					<label>
+						<span>옵션</span>
+					</label>
+					<select name="searchKeywordType">
+						<option value="titleAndBody">제목+내용</option>
+						<option value="title">제목</option>
+						<option value="body">내용</option>
+					</select>
+				</div>
+
+				<div>
+					<label>
+						<span>제목</span>
+					</label>
+					<input value="${param.searchKeyword}" name="searchKeyword"
+						type="text" placeholder="검색어를 입력해주세요." maxlength="10" />
+				</div>
+
+				<div>
+					<label>
+						<span>검색</span>
+					</label>
+					<input type="submit" value="검색" />
+				</div>
+			</form>
 		</div>
 
-		<form action="">
-			<input type="hidden" name="boardId" value="${board.id}" />
-
-			<div>
-				<label>
-					<span>옵션</span>
-				</label>
-				<select name="searchKeywordType">
-					<option value="titleAndBody">제목+내용</option>
-					<option value="title">제목</option>
-					<option value="body">내용</option>
-				</select>
-			</div>
-
-			<div>
-				<label>
-					<span>제목</span>
-				</label>
-				<input value="${param.searchKeyword}" name="searchKeyword"
-					type="text" placeholder="검색어를 입력해주세요." maxlength="10" />
-			</div>
-
-			<div>
-				<label>
-					<span>검색</span>
-				</label>
-				<input type="submit" value="검색" />
-			</div>
-		</form>
-
-		<div>
-			<span>게시물 리스트</span>
-		</div>
 		<div>
 			<span>TOTAL ITEMS : </span>
 			<span>${totalItemsCount}</span>
-		</div>
-
-		<div>
+			<br />
 			<span>TOTAL PAGES : </span>
 			<span>${totalPage}</span>
-		</div>
-
-		<div>
+			<br />
 			<span>CURRENT PAGE : </span>
 			<span>${page}</span>
 		</div>
@@ -72,7 +65,8 @@
 			</a>
 		</div>
 	</div>
-	<hr />
+</section>
+<hr />
 
 <section class="articleList_container">
 	<div class="articleList_wrap">
@@ -81,19 +75,20 @@
 			<!-- 게시물 아이템, first -->
 			<div class="articleList_box">
 				<div class="articleListMember">
-					<a href="#none">
+					<div>
 						<img onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}"
 							src="${article.writerProfileImgUri}" alt="">
-					</a>
-					<a href="${detailUri}">
-						<span>작성자</span>
+					</div>
+					<div>
+						<span>작성자 : </span>
 						<span>${article.extra__writerName}</span>
 						<br />
-						<span>등록날짜</span>
+						<span>등록날짜 : </span>
 						<span>${article.regDate}</span>
-						<span>수정날짜</span>
+						<br />
+						<span>수정날짜 : </span>
 						<span>${article.updateDate}</span>
-					</a>
+					</div>
 				</div>
 
 				<div class="articleListTitle">
@@ -135,37 +130,37 @@
 	</div>
 </section>
 
-	<div>
-		<c:set var="pageMenuArmSize" value="4" />
-		<c:set var="startPage"
-			value="${page - pageMenuArmSize >= 1  ? page - pageMenuArmSize : 1}" />
-		<c:set var="endPage"
-			value="${page + pageMenuArmSize <= totalPage ? page + pageMenuArmSize : totalPage}" />
+<section class="articleListPagination_container">
+	<c:set var="pageMenuArmSize" value="4" />
+	<c:set var="startPage"
+		value="${page - pageMenuArmSize >= 1  ? page - pageMenuArmSize : 1}" />
+	<c:set var="endPage"
+		value="${page + pageMenuArmSize <= totalPage ? page + pageMenuArmSize : totalPage}" />
 
-		<c:set var="uriBase" value="?boardId=${board.id}" />
-		<c:set var="uriBase"
-			value="${uriBase}&searchKeywordType=${param.searchKeywordType}" />
-		<c:set var="uriBase"
-			value="${uriBase}&searchKeyword=${param.searchKeyword}" />
+	<c:set var="uriBase" value="?boardId=${board.id}" />
+	<c:set var="uriBase"
+		value="${uriBase}&searchKeywordType=${param.searchKeywordType}" />
+	<c:set var="uriBase"
+		value="${uriBase}&searchKeyword=${param.searchKeyword}" />
 
-		<c:set var="aClassStr" />
+	<c:set var="aClassStr" />
 
-		<c:if test="${startPage > 1}">
-			<a class="${aClassStr}" href="${uriBase}&page=1">◀◀</a>
-			<a class="${aClassStr}" href="${uriBase}&page=${startPage - 1}">◀</a>
-		</c:if>
+	<c:if test="${startPage > 1}">
+		<a class="${aClassStr}" href="${uriBase}&page=1">◀◀</a>
+		<a class="${aClassStr}" href="${uriBase}&page=${startPage - 1}">◀</a>
+	</c:if>
 
-		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<a class="${aClassStr} ${page == i ? 'text-red-500' : ''}"
-				href="${uriBase}&page=${i}">${i}</a>
-		</c:forEach>
+	<c:forEach var="i" begin="${startPage}" end="${endPage}">
+		<a class="${aClassStr} ${page == i ? 'text-red-500' : ''}"
+			href="${uriBase}&page=${i}">${i}</a>
+	</c:forEach>
 
-		<c:if test="${endPage < totalPage}">
-			<a class="${aClassStr}" href="${uriBase}&page=${endPage + 1}">▶</a>
+	<c:if test="${endPage < totalPage}">
+		<a class="${aClassStr}" href="${uriBase}&page=${endPage + 1}">▶</a>
 
-			<a class="${aClassStr}" href="${uriBase}&page=${totalPage}">▶▶</a>
-		</c:if>
-	</div>
+		<a class="${aClassStr}" href="${uriBase}&page=${totalPage}">▶▶</a>
+	</c:if>
+</section>
 
 
 
