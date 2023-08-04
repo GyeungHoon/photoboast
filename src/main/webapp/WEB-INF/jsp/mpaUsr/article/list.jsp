@@ -70,21 +70,18 @@
 			<!-- 게시물 아이템, first -->
 
 			<div class="article_list_img">
-				<a href="${detailUri}">
-
-				</a>
+				<a href="${detailUri}"> </a>
 			</div>
 			<div>
-				<a href="${detailUri}">
-					<span>제목</span>
-					<span>${article.title}</span>
-				</a>
+					<h3><a href="${detailUri}">${article.title}</a></h3>
 			</div>
-			<div>
-				<img onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}"
-					src="${article.writerProfileImgUri}" alt="">
-				<span>작성자 : </span>
-				<span>${article.extra__writerName}</span>
+			<div class="profile">
+				<span class="profile_img">
+					<img 
+						onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}"
+						src="${article.writerProfileImgUri}" alt="">
+				</span>
+				<span class="profile_name">${article.extra__writerName}</span>
 			</div>
 			<div>
 				<a href="${detailUri}" title="자세히 보기">
