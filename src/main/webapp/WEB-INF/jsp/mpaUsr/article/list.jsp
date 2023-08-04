@@ -8,50 +8,11 @@
 <%@ include file="../common/head.jspf"%>
 
 <h2>${board.name}ARTICLELIST</h2>
-<section>
+<section class="article_search_section">
 	<div>
-		<form action="">
-			<input type="hidden" name="boardId" value="${board.id}" />
-			<div class="searchSelect">
-				<label for="searchKeywordType">
-					<span>옵션</span>
-				</label>
-				<select id="searchKeywordType" name="searchKeywordType">
-					<option value="titleAndBody">제목+내용</option>
-					<option value="title">제목</option>
-					<option value="body">내용</option>
-				</select>
-
-				<script>
-					const param__searchKeywordType = '${param.searchKeywordType}';
-					if (param__searchKeywordType.length > 0) {
-						$('.articleListIu_wrap [name="searchKeywordType"]')
-								.val('${param.searchKeywordType}');
-					}
-				</script>
-			</div>
-			<div>
-				<label for="searchKeyword">
-					<span>제목</span>
-				</label>
-				<input value="${param.searchKeyword}" id="searchKeyword"
-					name="searchKeyword" type="text" placeholder="검색어를 입력해주세요."
-					maxlength="10" />
-			</div>
-
-			<div>
-				<input type="submit" value="검색" />
-			</div>
-		</form>
-
-		<div>
-			<span>TOTAL ITEMS : </span>
-			<span>${totalItemsCount}</span>
-			<span>TOTAL PAGES : </span>
-			<span>${totalPage}</span>
-			<span>CURRENT PAGE : </span>
-			<span>${page}</span>
-		</div>
+		<p>TOTAL ITEMS : ${totalItemsCount}</p>
+		<p>TOTAL PAGES : ${totalPage}</p>
+		<p>CURRENT PAGE : ${page}</p>
 		<div>
 			<a href="write?boardId=${board.id}">
 				<span>
@@ -61,6 +22,43 @@
 			</a>
 		</div>
 	</div>
+
+	<form action="">
+		<input type="hidden" name="boardId" value="${board.id}" />
+		<div class="searchSelect">
+			<label for="searchKeywordType">
+				<span>옵션</span>
+			</label>
+			<select id="searchKeywordType" name="searchKeywordType">
+				<option value="titleAndBody">제목+내용</option>
+				<option value="title">제목</option>
+				<option value="body">내용</option>
+			</select>
+
+			<script>
+				const param__searchKeywordType = '${param.searchKeywordType}';
+				if (param__searchKeywordType.length > 0) {
+					$('.articleListIu_wrap [name="searchKeywordType"]').val(
+							'${param.searchKeywordType}');
+				}
+			</script>
+		</div>
+		<div>
+			<label for="searchKeyword">
+				<span>제목</span>
+			</label>
+			<input value="${param.searchKeyword}" id="searchKeyword"
+				name="searchKeyword" type="text" placeholder="검색어를 입력해주세요."
+				maxlength="10" />
+		</div>
+
+		<div>
+			<input type="submit" value="검색" />
+		</div>
+	</form>
+
+
+
 </section>
 <section class="article_list_section">
 	<h2>전시관 목록</h2>
@@ -73,12 +71,13 @@
 				<a href="${detailUri}"> </a>
 			</div>
 			<div>
-					<h3><a href="${detailUri}">${article.title}</a></h3>
+				<h3>
+					<a href="${detailUri}">${article.title}</a>
+				</h3>
 			</div>
 			<div class="profile">
 				<span class="profile_img">
-					<img 
-						onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}"
+					<img onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}"
 						src="${article.writerProfileImgUri}" alt="">
 				</span>
 				<span class="profile_name">${article.extra__writerName}</span>
