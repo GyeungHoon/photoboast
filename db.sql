@@ -297,3 +297,4 @@ DEFAULT 3 NOT NULL COMMENT '(3=일반,7=관리자)' AFTER `loginPw`;
 UPDATE `member`
 SET authLevel = 7
 WHERE id = 1;
+

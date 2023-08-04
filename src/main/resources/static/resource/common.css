@@ -61,97 +61,38 @@ address {
 }
 
 img {
-	width: 5em;
-	border-radius: 50%;
+	width: 30px;
 }
 
-.articleLisBoardTitle {
-	text-align: center;
-}
-
-.articleListUi_container {
+.article_list_img > a{
 	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-
-.articleListUi_container .articleListIu_wrap {
-	width: 450px;
-	padding: 1em;
-	display: flex;
-	justify-content: space-between;
-}
-.articleListIu_wrap form .searchSelect select{
-	width: 150px;
-	border: 2px solid #eee;
-}
-.articleListIu_wrap form .searchInput input{
-	width: 150px;
-	border: 2px solid #eee;
-}
-.articleListIu_wrap form .searchBtn input{
-	width: 150px;
-	color: #fff;
-	background : rgb(128, 0, 255);
-}
-
-
-.articleListUi_container .articleListIu_wrap div {
-	width: 200px;
-}
-
-.articleListUi_container .articleListIu_wrap .articleListWrite {
-	text-align: center;
-}
-
-.articleList_container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
+	height: 600px;
+	display: block;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 5px;
+	background-image: url(http://event-news.kr/data_gallery/n/nicegallery__gallery/movieplace_cover.jpg);
+	animation: mogocen linear 10s infinite;
+	animation-fill-mode: backwards;
 
 }
 
-.articleList_container .articleList_wrap {
-	width: 80%;
-	margin-bottom: 1em;
-	padding-top: 1em;
-	display: flex;
-	flex-wrap: wrap;
+@keyframes mogocen {
+	0% {
+		background-position: 0 0
+	}
+
+	50% {
+		background-position: 0 -50px;
+	}
+
+	100% {
+		background-position: 0 0
+	}
 }
 
-.articleList_container .articleList_wrap .articleList_box {
-	width: 30%;
-	min-width: 350px;
-	margin: 0 1em 1em 1em;
-	padding: 1em;
-	border: 1px solid #eee;
-	box-sizing: border-box;
-}
-
-.articleList_container .articleList_wrap .articleList_box div {
-	margin-bottom: 5px;
-	text-align: center;
-}
-
-.articleList_container .articleList_wrap .articleList_box .articleListMember {
-	display: flex;
-	justify-content: center;
-}
-
-.articleList_container .articleList_wrap .articleList_box .articleListMember a,
-div {
-	font-size: 0.8rem;
-}
-
-.articleList_container .articleList_wrap .articleList_box .articleListTitle {
-
-	font-size: 1.5rem;
-	text-align: center;
-
-}
-
-.articleListPagination_container {
-	margin-bottom: 2em;
-	text-align: center;
+.article_list_content {
+	width: 60%;
+	margin: 0 auto 10em;
 }
