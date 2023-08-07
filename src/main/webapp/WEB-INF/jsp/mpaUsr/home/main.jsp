@@ -8,29 +8,17 @@
 <%@ include file="../common/head.jspf"%>
 
 
-<div class="slide_wrapper">
-		<ul class="slides">
-			<li>slide 01</li>
-			<li>slide 02</li>
-			<li>slide 03</li>
-			<li>slide 04</li>
-			<li>slide 05</li>
-		</ul>
-	</div>
-	
-	<p class="controls">
-	<span class="prev">prev</span>
-	<span class="next">next</span>
-</p>
-	
+<section class="slide_center">
+	<div class="slide_item_v1"></div>
+	<div class="slide_item_v2"></div>
+</section>
+
 
 <section>
 	<ul class="paser">
 		<li onClick=(pager(0))>1</li>
 		<li onClick=(pager(1))>2</li>
 		<li onClick=(pager(2))>3</li>
-		<li onClick=(pager(3))>4</li>	
-		<li onClick=(pager(4))>5</li>		
 	</ul>
 </section>
 

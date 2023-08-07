@@ -154,33 +154,13 @@ address {
 	}
 }
 
-
-.slide_wrapper{
-	position:relative;
-	width: 660px;
+.slide_center {
+	width: 50%;
 	margin: 0 auto;
-	height: 660px;
+	border: 1px solid black;
+	display: flex;
 	overflow: hidden;
 }
-
-.slides{
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.slides.animated{
-	transition: 0.5s ease-out;
-}
-
-.slides li{
-	width: 660px;
-	height: 660px;
-	background: #ccc;
-	float: left;
-}
-
-.controls{
-	text-align: center;
-	margin-top: 50px;
+.slide_center div img {
+	width: 500px;
 }
