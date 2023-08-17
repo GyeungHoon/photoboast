@@ -29,7 +29,7 @@ SET regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 1,
-title = '제목1',
+title = '도토리가든1',
 `body` = '본문1';
 
 ## 1번회원이 1번 게시판에 2번글 작성
@@ -38,8 +38,8 @@ SET regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 1,
-title = '제목2',
-`body` = '본문2';
+title = '삼청동수제비2',
+`body` = '본문 삼청동수제비2';
 
 ## 1번회원이 1번 게시판에 3번글 작성
 INSERT INTO article
@@ -47,8 +47,8 @@ SET regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 1,
-title = '제목3',
-`body` = '본문3';
+title = '공예박물관3',
+`body` = '본문공 예박물관33';
 
 ## 2번회원이 1번 게시판에 4번글 작성
 INSERT INTO article
@@ -56,8 +56,8 @@ SET regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 2,
-title = '제목4',
-`body` = '본문4';
+title = '노티드 안국4',
+`body` = '본문 노티드4';
 
 ## 2번회원이 2번 게시판에 5번글 작성
 INSERT INTO article
@@ -65,8 +65,8 @@ SET regDate = NOW(),
 updateDate = NOW(),
 boardId = 2,
 memberId = 2,
-title = '제목5',
-`body` = '본문5';
+title = '소금집델리5',
+`body` = '본문 소금집델리5';
 
 ## 2번회원이 2번 게시판에 6번글 작성
 INSERT INTO article
@@ -74,8 +74,8 @@ SET regDate = NOW(),
 updateDate = NOW(),
 boardId = 2,
 memberId = 2,
-title = '제목6',
-`body` = '본문6';
+title = '국제갤러리6',
+`body` = '본문 국제갤러리6';
 
 # 게시판 테이블 생성
 CREATE TABLE board (

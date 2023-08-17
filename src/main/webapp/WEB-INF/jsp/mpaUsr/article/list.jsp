@@ -9,27 +9,13 @@
 
 
 <section class="article_search_section">
-	<div>
-		<p>전체 게시물 : ${totalItemsCount}</p>
-		<p>총 페이지 : ${totalPage}</p>
-		<p>현재페이지 : ${page}</p>
-		<div>
-			<a href="write?boardId=${board.id}">
-				<span>
-					<i class="fas fa-edit"></i>
-				</span>
-				<span>글 작성</span>
-			</a>
-		</div>
-	</div>
+
 
 	<form action="">
 		<input type="hidden" name="boardId" value="${board.id}" />
 		<div class="searchSelect">
-			<label for="searchKeywordType">
-				<span>옵션</span>
-			</label>
-			<select id="searchKeywordType" name="searchKeywordType">
+			<label for="searchKeywordType"> <span>옵션</span>
+			</label> <select id="searchKeywordType" name="searchKeywordType">
 				<option value="titleAndBody">제목+내용</option>
 				<option value="title">제목</option>
 				<option value="body">내용</option>
@@ -44,19 +30,30 @@
 			</script>
 		</div>
 		<div>
-			<label for="searchKeyword">
-				<span>제목</span>
-			</label>
-			<input value="${param.searchKeyword}" id="searchKeyword"
+			<label for="searchKeyword"> <span>제목</span>
+			</label> <input value="${param.searchKeyword}" id="searchKeyword"
 				name="searchKeyword" type="text" placeholder="검색어를 입력해주세요."
 				maxlength="10" />
 		</div>
 
-		<div>
-			<input type="submit" value="검색" />
+		<div >
+			<input class="btn-primary p-1" type="submit" value="검색" />
 		</div>
 	</form>
-
+	<div>
+		<div>
+			<p>전체 게시물 : ${totalItemsCount}</p>
+			<p>총 페이지 : ${totalPage}</p>
+			<p>현재페이지 : ${page}</p>
+			<div>
+			<a href="write?boardId=${board.id}"> <span> <i
+					class="fas fa-edit"></i>
+			</span> <span>글 작성</span>
+			</a>
+		</div>
+		</div>
+		
+	</div>
 
 
 </section>
@@ -76,30 +73,20 @@
 				</h3>
 			</div>
 			<div class="profile">
-				<span class="profile_img">
-					<img onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}"
-						src="${article.writerProfileImgUri}" alt="">
-				</span>
-				<span class="profile_name">${article.extra__writerName}</span>
+				<span class="profile_img"> <img
+					onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}"
+					src="${article.writerProfileImgUri}" alt="">
+				</span> <span class="profile_name">${article.extra__writerName}</span>
 			</div>
 			<div>
-				<a href="${detailUri}" title="자세히 보기">
-					<span>
-						<i class="fas fa-info"></i>
-					</span>
-					<span>자세히 보기</span>
-				</a>
-				<a href="#">
-					<span>
-						<i class="fas fa-edit"></i>
-					</span>
-					<span>수정</span>
-				</a>
-				<a onclick="if ( !confirm('삭제하시겠습니까?') ) return false;" href="#">
-					<span>
-						<i class="fas fa-trash"></i>
-					</span>
-					<span>삭제</span>
+				<a href="${detailUri}" title="자세히 보기"> <span> <i
+						class="fas fa-info"></i>
+				</span> <span>자세히 보기</span>
+				</a> <a href="#"> <span> <i class="fas fa-edit"></i>
+				</span> <span>수정</span>
+				</a> <a onclick="if ( !confirm('삭제하시겠습니까?') ) return false;" href="#">
+					<span> <i class="fas fa-trash"></i>
+				</span> <span>삭제</span>
 				</a>
 			</div>
 		</div>

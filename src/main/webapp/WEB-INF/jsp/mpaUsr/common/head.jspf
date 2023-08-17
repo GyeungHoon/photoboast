@@ -64,7 +64,7 @@
                 <li>
                     <a href="../member/mypage" class="h-full flex items-center px-5">
                         <span>
-                            <i class="fas fa-sign-out-alt"></i>
+                            <i class="fas fa-user"></i>     
                         </span>
                         <span class="hidden md:block">&nbsp;${rq.loginedMember.nickname}＇마이페이지</span>
                     </a>
