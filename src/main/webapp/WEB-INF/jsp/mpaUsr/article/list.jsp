@@ -7,12 +7,12 @@
 
 <%@ include file="../common/head.jspf"%>
 
-<h2>${board.name}ARTICLELIST</h2>
+
 <section class="article_search_section">
 	<div>
-		<p>TOTAL ITEMS : ${totalItemsCount}</p>
-		<p>TOTAL PAGES : ${totalPage}</p>
-		<p>CURRENT PAGE : ${page}</p>
+		<p>전체 게시물 : ${totalItemsCount}</p>
+		<p>총 페이지 : ${totalPage}</p>
+		<p>현재페이지 : ${page}</p>
 		<div>
 			<a href="write?boardId=${board.id}">
 				<span>

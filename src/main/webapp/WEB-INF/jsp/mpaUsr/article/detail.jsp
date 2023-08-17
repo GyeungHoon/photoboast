@@ -21,17 +21,17 @@
                 <div class="px-4 py-8">
                     <div class="flex">
                         <span>
-                            <span>Comments:</span>
-                            <span class="text-gray-400 text-light">30</span>
+                            <span>댓글:</span>
+                            <span class="text-gray-400 text-light">1</span>
                         </span>
                         <span class="ml-3">
-                            <span>Views:</span>
-                            <span class="text-gray-400 text-light">60k</span>
+                            <span>조회수:</span>
+                            <span class="text-gray-400 text-light">1</span>
                         </span>
                         <div class="flex-grow"></div>
                         <span>
-                            <span>Likes:</span>
-                            <span class="text-gray-400 text-light">120k</span>
+                            <span>좋아요:</span>
+                            <span class="text-gray-400 text-light">1</span>
                         </span>
                     </div>
 
@@ -44,17 +44,14 @@
 
                     <div class="mt-3">
                         <span class="badge badge-accent">작성자</span>
+                        <span>${article.extra__writerName}</span>
                         <div class="mt-2">
-                            <img class="w-40 h-40 object-cover rounded" onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}" src="${article.writerProfileImgUri}" alt="">
-                            <span>${article.extra__writerName}</span>
+                            <img class="w-20 h-20 object-cover rounded" onerror="${article.writerProfileFallbackImgOnErrorHtmlAttr}" src="${article.writerProfileImgUri}" alt="">
                         </div>
                     </div>
 
                     <div class="mt-3 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-                        <div>
-                            <span class="badge badge-primary">번호</span>
-                            <span>${article.id}</span>
-                        </div>
+
 
                         <div>
                             <span class="badge">등록날짜</span>
@@ -70,7 +67,8 @@
                     <div class="mt-6">
                         <span class="badge badge-outline">본문</span>
                         <div class="mt-3">
-                            <img class="rounded" src="https://i.pravatar.cc/250?img=37" alt="">
+                        
+                            <img class="rounded" src="http://event-news.kr/data_gallery/n/nicegallery__gallery/movieplace_cover.jpg" alt="">
                         </div>
                         <div class="mt-3">
                             ${article.bodyForPrint}
@@ -306,11 +304,11 @@
                                     <div class="mt-1">
                                         <span class="text-gray-400 cursor-pointer">
                                             <span><i class="fas fa-thumbs-up"></i></span>
-                                            <span>5,600</span>
+                                            <span>0</span>
                                         </span>
                                         <span class="ml-1 text-gray-400 cursor-pointer">
                                             <span><i class="fas fa-thumbs-down"></i></span>
-                                            <span>5,600</span>
+                                            <span>0</span>
                                         </span>
                                     </div>
                                 </div>

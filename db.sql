@@ -131,9 +131,9 @@ SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'user1',
 loginPw = 'user1',
-`name` = '유저1이름',
-nickname = '유저1별명',
-email = 'jangka512@gmail.com',
+`name` = '김범수1',
+nickname = '김범수1',
+email = 'ghp0415@naver.com',
 cellphoneNo = '01012341234';
 
 # 회원 테스트 데이터 생성
@@ -143,9 +143,9 @@ SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'user2',
 loginPw = 'user2',
-`name` = '유저2이름',
-nickname = '유저2별명',
-email = 'jangka512@gmail.com',
+`name` = '박효신2',
+nickname = '박효신2',
+email = 'ghp0415@naver.com',
 cellphoneNo = '01012341234';
 
 # 회원 테스트 데이터 생성
@@ -155,9 +155,9 @@ SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'user3',
 loginPw = 'user3',
-`name` = '유저3이름',
-nickname = '유저3별명',
-email = 'jangka512@gmail.com',
+`name` = '이수3',
+nickname = '이수3',
+email = 'ghp0415@naver.com',
 cellphoneNo = '01012341234';
 
 # 로그인비번 칼럼의 길이를 100으로 늘림

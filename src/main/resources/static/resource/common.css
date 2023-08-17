@@ -164,3 +164,10 @@ address {
 .slide_center div img {
 	width: 500px;
 }
+
+.header_container{
+	width: 80%;
+	display: flex;
+	margin:auto;
+	justify-content: space-between;
+}

@@ -19,25 +19,19 @@
                         <img class="w-40 h-40 object-cover rounded-full" onerror="${rq.loginedMember.profileFallbackImgOnErrorHtmlAttr}" src="${rq.loginedMember.profileImgUri}" alt="">
                     </a>
 
-                    <a href="#" class="order-2 hover:underline">
-                        <span class="badge badge-primary">번호</span>
-                        <span>${rq.loginedMember.id}</span>
-                    </a>
+                  
 
                     <a href="#" class="cursor-pointer order-3 hover:underline">
-                        <span class="badge badge-accent">회원타입</span>
+                        <span class="badge badge-accent">회원</span>
                         <span>${rq.loginedMember.authLevelName}</span>
                     </a>
 
                     <a href="#" class="order-4 hover:underline">
-                        <span class="badge">등록날짜</span>
+                        <span class="badge">가입날짜</span>
                         <span class="text-gray-600 text-light">${rq.loginedMember.regDate}</span>
                     </a>
 
-                    <a href="#" class="order-5 hover:underline">
-                        <span class="badge">수정날짜</span>
-                        <span class="text-gray-600 text-light">${rq.loginedMember.updateDate}</span>
-                    </a>
+                  
 
                     <a href="#" class="order-6 hover:underline">
                         <span class="badge">로그인아이디</span>
@@ -50,7 +44,7 @@
                     </a>
 
                     <a href="#" class="order-8 sm:order-4 md:order-8 hover:underline">
-                        <span class="badge">별명</span>
+                        <span class="badge">닉네임</span>
                         <span class="text-gray-600">${rq.loginedMember.nickname}</span>
                     </a>
                 </div>
